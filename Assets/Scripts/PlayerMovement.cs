@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 offset;
     private Vector3 moveDelta;
 
+    public bool canMove = true;
+
     private void Awake()
     {
         offset = _camera.position - transform.position; 
@@ -38,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
             currSpeed = speed;
         }
 
-        Rotate();
-        Move();
+        if(canMove)
+        {
+            Rotate();
+            Move();
+        }
     }
 
     void Rotate()
