@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //code from of https://www.youtube.com/watch?v=uFbQalvs6ao
+    //code adapted from https://www.youtube.com/watch?v=uFbQalvs6ao
 
     public Transform _camera;
     public float speed, rotSpeed;
+    private float currSpeed;
     private float rotX, rotY;
     private Rigidbody rb;
     private Vector3 offset;
@@ -28,6 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Debug.Log("sprinting");
+            currSpeed = speed * 1.5f;
+        } else
+        {
+            currSpeed = speed;
+        }
+
         Rotate();
         Move();
     }
@@ -49,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         _camera.position = transform.position + offset;
 
         moveDelta = transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal");
-        rb.velocity = moveDelta.normalized * speed;
 
+        rb.velocity = moveDelta.normalized * currSpeed;
     }
 }
