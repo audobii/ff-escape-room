@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         //force cursor invisible + set to middle
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()

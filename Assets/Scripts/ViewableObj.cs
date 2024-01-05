@@ -14,6 +14,8 @@ public class ViewableObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.activeSelf) playerRef.GetComponent<PlayerMovement>().canMove = false;
+
         if (Input.GetKey(KeyCode.Space))
         {
             playerRef.GetComponent<PlayerMovement>().canMove = true;
