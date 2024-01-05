@@ -354,6 +354,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/ClickableObject.cs"
 "Assets/Scripts/ClickableViewable.cs"
+"Assets/Scripts/FadeAway.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/ViewableObj.cs"
 -langversion:9.0
