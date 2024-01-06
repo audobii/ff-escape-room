@@ -29,6 +29,11 @@ public class FadeAway : MonoBehaviour
             newColor = new Color(currColor.r, currColor.g, currColor.b, fade);
 
             gameObject.GetComponent<TextMeshProUGUI>().color = newColor;
+
+            if(currColor.a <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
